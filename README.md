@@ -36,7 +36,6 @@ Déploiement d'une solution XDR open source dans un environnement de lab personn
 12) Le service Wazuh va démarrer
 13) Premier agent Wazuh actif (screen <img width="1678" height="1003" alt="image" src="https://github.com/user-attachments/assets/4a021f86-d22a-4bec-b621-ba8a919a2f47" />)
 14) Deuxième agent Wazuh actif (screen <img width="1677" height="1331" alt="image" src="https://github.com/user-attachments/assets/6be60a2c-5530-42f4-80b9-8ca4f14b808b" />)
-15) 
 
 
 ### Problèmes rencontrés et solutions
@@ -47,7 +46,7 @@ Déploiement d'une solution XDR open source dans un environnement de lab personn
 5) L'agent ne récupère pas sa clé d'authentification - Cause : Mauvaise version de l'agent pour du Wazuh 4.7 - Solution : Télécharger l'agent en version 4.7.5
 6) Installation d'une nouvelle VM W11 => Erreur : No bootable option or device was found — Cause : ordre de boot incorrect dans VirtualBox. Solution : Paramètres VM → Système → Carte mère → mettre Optique en premier dans l'ordre d'amorçage
 7) Windows 11 refuse de s'installer sur VirtualBox sans TPM 2.0 et Secure Boot. Solution : bypass via regedit pendant l'installation — créer la clé HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig avec les valeurs BypassTPMCheck et BypassSecureBootCheck à 1
-8) 
+8) Les alertes ne remontent pas correctement dans la console Wazuh => Activation des audits avec la commande powershell : auditpol /set /category:* /success:enable /failure:enable
 
 ## Configuration
 ### Réseau
@@ -68,6 +67,12 @@ Déploiement d'une solution XDR open source dans un environnement de lab personn
 - Wazuh Agent : 4.7.5
 - Ubuntu Server : 22.04 LTS
 ## Résultats et alertes observées
+Lancement de 3 commandes Powershell : 
+- net user hacker /add
+- net localgroup Administrateurs hacker /add
+- net user hacker /delete
+Les alertes remontent bien dans la console => <img width="1657" height="641" alt="Alertes" src="https://github.com/user-attachments/assets/0f6d643b-90d2-4411-9f05-5a0e2d8e9956" />
+
 ## Prochaines étapes
 - Tester des malware samples en environnement isolé
 - Intégrer pfSense comme firewall virtuel
