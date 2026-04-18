@@ -123,3 +123,4 @@ Les logs pfSense remontent en temps réel dans la console Wazuh.
 Les agents en lab-network apparaissent avec leur nom dans Security Events.
 <img width="1643" height="228" alt="image" src="https://github.com/user-attachments/assets/8ae0831d-1d1b-49fe-9197-dd9ea6e48f21" />
 
+
