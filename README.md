@@ -93,14 +93,14 @@ des événements réseau et des alertes de sécurité.
 Ajout d'une section remote dans /var/ossec/etc/ossec.conf pour écouter 
 les logs Syslog de pfSense :
 
-<xml
+```
 
   syslog
   514
   udp
   192.168.1.34
 
->
+```
 
 Redémarrage du service :
 ```bash
