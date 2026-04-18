@@ -82,9 +82,6 @@ Alertes générées automatiquement par Wazuh :
 | T1484 | Defense Evasion, Privilege Escalation | Users group changed | 5 |
 | T1078 | Persistence, Initial Access | Failed privileged operation | 4 |
 <img width="1657" height="641" alt="Alertes" src="https://github.com/user-attachments/assets/0f6d643b-90d2-4411-9f05-5a0e2d8e9956" />
-
-## Prochaines étapes
-- Intégrer pfSense comme firewall virtuel + intégration des logs pfSense dans Wazuh
   
 ## Intégration des logs pfSense dans Wazuh
 
@@ -96,14 +93,14 @@ des événements réseau et des alertes de sécurité.
 Ajout d'une section remote dans /var/ossec/etc/ossec.conf pour écouter 
 les logs Syslog de pfSense :
 
-```xml
+<xml
 
   syslog
   514
   udp
   192.168.1.34
 
-```
+>
 
 Redémarrage du service :
 ```bash
