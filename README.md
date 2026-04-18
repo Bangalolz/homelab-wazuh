@@ -17,8 +17,8 @@ Déploiement d'une solution XDR open source dans un environnement de lab personn
 - RAM : minimum 4Go recommandé
 - CPU : 2 cœurs minimum
 - Stockage : 50Go minimum
-- 2 Vm W11 avec le réseau configuré en réseau interne (pour les test ransomware plus tard)
-- Nom du réseau interne : lab-network
+- 2 Vm W11 avec le réseau configuré en bridge
+- Nom du réseau interne : lab-network (en cas de test avec des ransomware)
 - plage ip : 192.168.100.1 -> 192.168.100.253 (la 254 étant ma passerelle par défaut pour de futurs projets)
 
 ### Étapes
