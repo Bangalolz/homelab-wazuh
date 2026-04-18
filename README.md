@@ -84,5 +84,45 @@ Alertes générées automatiquement par Wazuh :
 <img width="1657" height="641" alt="Alertes" src="https://github.com/user-attachments/assets/0f6d643b-90d2-4411-9f05-5a0e2d8e9956" />
 
 ## Prochaines étapes
-- Intégrer pfSense comme firewall virtuel
-- Monter un Active Directory
+- Intégrer pfSense comme firewall virtuel + intégration des logs pfSense dans Wazuh
+  
+## Intégration des logs pfSense dans Wazuh
+
+### Objectif
+Centraliser les logs firewall pfSense dans Wazuh pour avoir une vue unifiée 
+des événements réseau et des alertes de sécurité.
+
+### Configuration Wazuh Manager
+Ajout d'une section remote dans /var/ossec/etc/ossec.conf pour écouter 
+les logs Syslog de pfSense :
+
+```xml
+
+  syslog
+  514
+  udp
+  192.168.1.34
+
+```
+
+Redémarrage du service :
+```bash
+sudo systemctl restart wazuh-manager
+```
+
+Vérification que Wazuh écoute bien sur le port 514 :
+```bash
+sudo ss -ulnp | grep 514
+```
+
+### Configuration pfSense
+Status → System Logs → Settings → Remote Logging Options :
+- Enable Remote Logging : ✅
+- Remote log servers : 192.168.1.19:514
+- Sources activées : Firewall events, DHCP events, General system events
+
+### Résultat
+Les logs pfSense remontent en temps réel dans la console Wazuh.
+Les agents en lab-network apparaissent avec leur nom dans Security Events.
+<img width="1643" height="228" alt="image" src="https://github.com/user-attachments/assets/8ae0831d-1d1b-49fe-9197-dd9ea6e48f21" />
+
