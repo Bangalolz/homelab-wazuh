@@ -29,7 +29,7 @@ Déploiement d'une solution XDR open source dans un environnement de lab personn
 5) Installer Wazuh => curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
 6) UFW inactif par défaut sur Ubuntu Server 22.04 — aucune règle firewall nécessaire pour le lab
 7) Connexion à la console <img width="1685" height="1197" alt="image" src="https://github.com/user-attachments/assets/d488591a-984c-4655-98b5-1b6e72f49fd2" />
-8) Ajout d'agents à surveiller => télécharger l'agent en version 7.4, lancer le programme d'installation sur le client, entrer l'ip du serveur Ubuntu, cliquer sur "Save"
+8) Ajout d'agents à surveiller => télécharger l'agent en version 4.7.5, lancer le programme d'installation sur le client, entrer l'ip du serveur Ubuntu, cliquer sur "Save"
 9) Ouvrir l'invit de commande en mode admin sur le client, et entrer la commande NET START WazuhSvc
 10) Le service Wazuh va démarrer
 11) Ensuite, cliquer sur "Generate Key", l'agent va générer une clé et remonter automatiquement dans la console.
