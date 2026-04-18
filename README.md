@@ -67,13 +67,23 @@ Déploiement d'une solution XDR open source dans un environnement de lab personn
 - Wazuh Agent : 4.7.5
 - Ubuntu Server : 22.04 LTS
 ## Résultats et alertes observées
-Lancement de 3 commandes Powershell : 
+### Test 1 — Simulation de création de compte administrateur suspect
+
+Commandes lancées depuis un CMD admin sur l'agent Windows :
 - net user hacker /add
-- net localgroup Administrateurs hacker /add
+- net localgroup Administrateurs hacker /add  
 - net user hacker /delete
-Les alertes remontent bien dans la console => <img width="1657" height="641" alt="Alertes" src="https://github.com/user-attachments/assets/0f6d643b-90d2-4411-9f05-5a0e2d8e9956" />
+
+Alertes générées automatiquement par Wazuh :
+
+| Technique MITRE | Tactique | Description | Niveau |
+|-----------------|----------|-------------|--------|
+| T1098 | Persistence | User account created | 8 |
+| T1484 | Defense Evasion, Privilege Escalation | Administrators group changed | 12 |
+| T1484 | Defense Evasion, Privilege Escalation | Users group changed | 5 |
+| T1078 | Persistence, Initial Access | Failed privileged operation | 4 |
+Screen <img width="1657" height="641" alt="Alertes" src="https://github.com/user-attachments/assets/0f6d643b-90d2-4411-9f05-5a0e2d8e9956" />
 
 ## Prochaines étapes
-- Tester des malware samples en environnement isolé
 - Intégrer pfSense comme firewall virtuel
 - Monter un Active Directory
