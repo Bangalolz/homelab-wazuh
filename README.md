@@ -43,7 +43,7 @@ Déploiement d'une solution XDR open source dans un environnement de lab personn
 3) Erreur lors de l'accès à l'ip du serveur Wazuh => http://192.168.1.19. Solution, il faut mettre https://192.168.1.19
 4) Oubli de noter le mdp à la fin de l'install => Commande sudo tar -O -xvf wazuh-install-files.tar wazuh-install-files/wazuh-passwords.txt pour le retrouver
 5) L'agent ne récupère pas sa clé d'authentification - Cause : Mauvaise version de l'agent pour du Wazuh 4.7 - Solution : Télécharger l'agent en version 4.7.5
-6) Installation d'une nouvelle VM W11 => Erreur : No bootable option or device was found — Cause : ordre de boot incorrect dans VirtualBox. Solution : Paramètres VM → Système → Carte mère → mettre Optique en premier dans l'ordre d'amorçage
+6) Installation d'une nouvelle VM W11 => Erreur : No bootable option or device was found — Cause : ordre de boot incorrect dans VirtualBox. Solution : Paramètres VM → Système → Carte mère → mettre Optique en premier dans l'ordre de boot
 7) Windows 11 refuse de s'installer sur VirtualBox sans TPM 2.0 et Secure Boot. Solution : bypass via regedit pendant l'installation — créer la clé HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig avec les valeurs BypassTPMCheck et BypassSecureBootCheck à 1
 8) Les alertes ne remontent pas correctement dans la console Wazuh => Activation des audits avec la commande powershell : auditpol /set /category:* /success:enable /failure:enable
 
