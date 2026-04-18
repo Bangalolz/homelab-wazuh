@@ -4,7 +4,7 @@ Déploiement et administration d'une solution XDR open source Wazuh en environne
 # Homelab SOC - Déploiement Wazuh XDR
 
 ## Objectif
-Déploiement d'une solution XDR open source dans un environnement de lab personnel (2 W11 PRO)
+Déploiement d'une solution XDR open source dans un environnement de lab personnel (2 PC sous W11)
 
 ## Architecture
 - Serveur Wazuh Manager : [Ubuntu Server 22.04 Oracle VB]
